@@ -29,3 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## RESTART
 I had to restart the whole project because the latest had a big list of ERROR messages from nowhere due to (seems like) the differences between versions. So after I reinstalled my npm package seems like it's working fine.
+
+
+## Components
+First "Main" component is gonna be filter.

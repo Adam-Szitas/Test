@@ -1,0 +1,35 @@
+@import '/src/colors.scss';
+.container {
+    position: inherit;
+    border: 2px solid $grey;
+    width: -webkit-fill-available;
+    height: auto;
+    margin: 20px;
+    background-color: inherit;
+    padding: 20px;
+    display: inline-block;
+}
+
+span.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+span.header>p {
+    display: inline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.op-5 {
+    opacity: .5;
+}
