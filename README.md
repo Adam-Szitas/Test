@@ -50,3 +50,27 @@ We need a service for the http request from the API
 ## Structure
 main component: filter
     inside filter component: step components
+
+
+## New Errors Occured
+errorlist: 
+  An unhandled exception occurred: ENOENT: no such file or directory, lstat 'D:\Bloomreach\Test\node_modules\@angular\material'
+  See "C:\Users\IWILL~1\AppData\Local\Temp\ng-ePO6aw\angular-errors.log" for further details.
+  npm ERR! code ELIFECYCLE
+  npm ERR! syscall spawn
+  npm ERR! file C:\WINDOWS\system32\cmd.exe
+  npm ERR! errno ENOENT
+  npm ERR! test@0.0.0 start: `ng serve`
+  npm ERR! spawn ENOENT
+  npm ERR!
+  npm ERR! Failed at the test@0.0.0 start script.
+  npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+  npm ERR! A complete log of this run can be found in:
+  npm ERR!     C:\Users\I Will\AppData\Roaming\npm-cache\_logs\2021-08-05T13_05_55_283Z-debug.log
+----------------------
+
+  An unhandled exception occurred: ENOENT: no such file or directory, lstat 'D:\Bloomreach\Test\node_modules\@angular\material'
+  See "C:\Users\IWILL~1\AppData\Local\Temp\ng-PuLVDk\angular-errors.log" for further details.
+
+----------------------
