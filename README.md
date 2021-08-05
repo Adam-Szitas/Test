@@ -27,9 +27,26 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
+
+
+
+## Prerequisit
+I made an API for this project
+
 ## RESTART
 I had to restart the whole project because the latest had a big list of ERROR messages from nowhere due to (seems like) the differences between versions. So after I reinstalled my npm package seems like it's working fine.
 
 
 ## Components
 First "Main" component is gonna be filter.
+
+
+## Sources
+material components I'm gonna grab from here: "https://material.angular.io/components/tabs/overview"
+
+## Service
+We need a service for the http request from the API
+
+## Structure
+main component: filter
+    inside filter component: step components
