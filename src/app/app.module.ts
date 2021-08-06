@@ -7,6 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterComponent } from './components/filter/filter.component';
 import { StepComponent } from './components/step/step.component';
 
+
+//ownImports
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import {MatTabsModule} from '@angular/material/tabs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +26,15 @@ import { StepComponent } from './components/step/step.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

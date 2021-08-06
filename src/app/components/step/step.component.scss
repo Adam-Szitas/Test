@@ -1,0 +1,17 @@
+@import '/src/colors.scss';
+.uppercase {
+    text-transform: uppercase;
+}
+
+.op-5 {
+    opacity: .5;
+}
+
+mat-icon {
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.lightblue {
+    color: $stepBlue;
+}
