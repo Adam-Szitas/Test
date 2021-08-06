@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { StepsIF } from 'src/app/interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -29,11 +29,50 @@ export class StepComponent implements OnInit {
   subscription!: Subscription;
   data!: any;
 
+  //create array for ngfor attributes
+  attributeElements:number[] = [0];
+
+  //we can show operations using boolean and ngIf
+  showOperations: boolean = false;
+
+
+
+
 
   constructor(
     private getData: DataService,
     private http: HttpClient
   ) { }
+
+
+  //creating host listener for getting the clicks
+  @HostListener('click', ['$event.target'])
+  getClick(element: HTMLElement):void{
+
+    if(element.classList.contains('toggle') || element.closest('.toggle')){
+      this.toggleOperations(true);
+      this.steps.operation.type = '';
+    }else{
+      this.toggleOperations(false);
+    }
+
+    if(element.classList.contains('operator') && element.getAttribute('type') && element.textContent){
+      this.steps.operation.type = element.getAttribute('type');
+      this.steps.operation.value = element.textContent;
+      console.log('operation type: ', this.steps.operation.type);
+    }
+
+    console.log(this.steps);
+
+
+
+    // if(element.id)
+    // console.log(element.id);
+
+    // console.log(element.classList.contains('step-form'));
+
+
+  }
 
   ngOnInit(): void {
     const httpHeader = {
@@ -58,5 +97,13 @@ export class StepComponent implements OnInit {
       }
     );
   }
+
+  //toggle hidden tabs
+  toggleOperations(show:boolean){
+    this.showOperations = show;
+  }
+
+
+
 
 }

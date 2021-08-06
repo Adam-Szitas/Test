@@ -17,6 +17,40 @@
                   <option *ngFor="let event of data.events; let i = index" [value]="event.name"></option>
             </datalist>
             </mat-form-field>
+            <!-- we can load many Attribute lists -->
+            <div class="multiAttributes" *ngFor="let attributeElement of attributeElements; let i = index">
+                <mat-form-field class="form-refine" name="mat-attribute" *ngIf="steps.name">
+                    <div class="{{ i === 0 ? 'cloneAttribute' : ''}}" class="cloneAttributes" index="0">
+                        <mat-label>Select refine</mat-label>
+                        <input type="text" autocomplete="off" matInput class="form-control search-text" list="attributes" name="steps.attribute" [(ngModel)]="steps.attribute">
+
+                        <datalist id="attributes">
+                      <option *ngFor="let attr of data.refine; let i = index" [value]="attr.name"></option>
+                    </datalist>
+                    </div>
+                </mat-form-field>
+                <mat-form-field class="form-operator" name="mat-operator" *ngIf="steps.attribute">
+                    <mat-label>Select operation</mat-label>
+                    <input type="text" autocomplete="off" matInput class="form-control search-text toggle" name="steps.operation.type" list="operation" [(ngModel)]="steps.operation.value">
+                    <mat-tab-group animationDuration="500ms" mat-align-tabs="center" class="mat-tab-group toggle" *ngIf="showOperations">
+                        <mat-tab class="toggle">
+                            <ng-template mat-tab-label>
+                                <img src="../../../assets/icons/title.svg" alt="title">
+                                <a>String</a>
+                            </ng-template>
+                            <a *ngFor="let operator of data.operators.strings; let i = index" class="d-block toggle operator" type="string" toggle="true">{{ operator.name }}</a>
+                        </mat-tab>
+                        <mat-tab class="toggle">
+                            <ng-template mat-tab-label>
+                                <img src="../../../assets/icons/tag.svg" alt="hashtag">
+                                <a>Number</a>
+                            </ng-template>
+                            <a *ngFor="let operator of data.operators.numbers; let i = index" class="d-block toggle operator" type="number" toggle="true">{{ operator.name }}</a>
+                        </mat-tab>
+                    </mat-tab-group>
+
+                </mat-form-field>
+            </div>
         </form>
     </div>
 </div>
