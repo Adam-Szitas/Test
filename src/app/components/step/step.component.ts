@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { StepsIF } from 'src/app/interfaces';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -11,6 +11,13 @@ import { environment as env } from 'src/environments/environment';
   styleUrls: ['./step.component.scss']
 })
 export class StepComponent implements OnInit {
+
+  @Input() stepNumber!: number;
+  nthStep:number = 0;
+
+  @Input() main: number = 0;
+  @Input() off: number = 0;
+
 
   //create the schema for data to store in
   //create even the interface and import it

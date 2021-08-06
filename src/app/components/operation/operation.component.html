@@ -1,0 +1,5 @@
+<div class="operations d-inline" #values>
+    <input type="text" name="main" *ngIf="showMain" (change)="changeEvent(values)" #main>
+    <a>{{ operator }}</a>
+    <input type="text" name="off" *ngIf="showOff" (change)="changeEvent(values)" #off>
+</div>

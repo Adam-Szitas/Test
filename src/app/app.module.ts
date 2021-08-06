@@ -16,12 +16,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
+import { OperationComponent } from './components/operation/operation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterComponent,
-    StepComponent
+    StepComponent,
+    OperationComponent
   ],
   imports: [
     BrowserModule,
