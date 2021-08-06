@@ -8,7 +8,15 @@
     </header>
     <div class="container-form">
         <form class="step-form">
+            <mat-form-field class="form-event" name="mat-event">
+                <mat-label>Select event</mat-label>
+                <input matInput type="text" id="5" autocomplete="off" class="form-control search-text" list="events" name="steps.name" [(ngModel)]="steps.name" />
 
+
+                <datalist id="events">
+                  <option *ngFor="let event of data.events; let i = index" [value]="event.name"></option>
+            </datalist>
+            </mat-form-field>
         </form>
     </div>
 </div>
