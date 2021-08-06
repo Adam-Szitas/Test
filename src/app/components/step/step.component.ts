@@ -12,6 +12,7 @@ import { environment as env } from 'src/environments/environment';
 })
 export class StepComponent implements OnInit {
 
+  //for getting the number of steps
   @Input() stepNumber!: number;
   nthStep:number = 0;
 
@@ -70,18 +71,13 @@ export class StepComponent implements OnInit {
     }
 
     console.log(this.steps);
-
-
-
-    // if(element.id)
-    // console.log(element.id);
-
-    // console.log(element.classList.contains('step-form'));
-
-
   }
 
   ngOnInit(): void {
+
+    this.nthStep = this.stepNumber + 1;
+
+
     const httpHeader = {
       headers: new HttpHeaders({
         'Accept': 'application/json',
@@ -110,6 +106,9 @@ export class StepComponent implements OnInit {
     this.showOperations = show;
   }
 
+  submitForm(){
+    console.log(this.steps);
+  }
 
 
 

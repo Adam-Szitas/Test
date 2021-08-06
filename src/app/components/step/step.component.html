@@ -1,13 +1,13 @@
 <div class="header">
     <header>
         <h2>
-            <a class="lightblue uppercase"> 1. STEP: </a>
-            <a class="uppercase"> TEST </a>
+            <a class="lightblue uppercase"> {{ nthStep }}. STEP: </a>
+            <a class="uppercase"> {{ steps.name }} </a>
             <mat-icon class="op-5">edit</mat-icon>
         </h2>
     </header>
     <div class="container-form">
-        <form class="step-form">
+        <form class="step-form d-flex" onsubmit='submitForm()'>
             <mat-form-field class="form-event" name="mat-event">
                 <mat-label>Select event</mat-label>
                 <input matInput type="text" id="5" autocomplete="off" class="form-control search-text" list="events" name="steps.name" [(ngModel)]="steps.name" />
@@ -18,17 +18,18 @@
             </datalist>
             </mat-form-field>
             <!-- we can load many Attribute lists -->
-            <div class="multiAttributes d-inline" *ngFor="let attributeElement of attributeElements; let i = index">
-                <mat-form-field class="form-refine" name="mat-attribute" *ngIf="steps.name">
-                    <div class="{{ i === 0 ? 'cloneAttribute' : ''}}" class="cloneAttributes" index="0">
+            <div class="multiAttributes cloneAttributes d-flex" *ngFor="let attributeElement of attributeElements; let i = index">
+                <div class="{{ i === 0 ? 'cloneAttribute' : ''}}" class="cloneAttributes" index="0">
+                    <mat-form-field class="form-refine" name="mat-attribute" *ngIf="steps.name">
                         <mat-label>Select refine</mat-label>
                         <input type="text" autocomplete="off" matInput class="form-control search-text" list="attributes" name="steps.attribute" [(ngModel)]="steps.attribute">
 
                         <datalist id="attributes">
                       <option *ngFor="let attr of data.refine; let i = index" [value]="attr.name"></option>
                     </datalist>
-                    </div>
-                </mat-form-field>
+                    </mat-form-field>
+
+                </div>
                 <mat-form-field class="form-operator" name="mat-operator" *ngIf="steps.attribute">
                     <mat-label>Select operation</mat-label>
                     <input type="text" autocomplete="off" matInput class="form-control search-text toggle" name="steps.operation.type" list="operation" [(ngModel)]="steps.operation.value">
@@ -48,10 +49,10 @@
                             <a *ngFor="let operator of data.operators.numbers; let i = index" class="d-block toggle operator" type="number" toggle="true">{{ operator.name }}</a>
                         </mat-tab>
                     </mat-tab-group>
-                    <span class="form-operation" name="mat-operation" *ngIf="steps.operation.type">
-                      <app-operation (valueMain)="main" (valueOff)="off" [type]="steps.operation.type" [value]="steps.operation.value"></app-operation>
-                  </span>
                 </mat-form-field>
+                <span class="form-operation" name="mat-operation" *ngIf="steps.operation.type">
+                  <app-operation (valueMain)="main" (valueOff)="off" [type]="steps.operation.type" [value]="steps.operation.value"></app-operation>
+              </span>
             </div>
         </form>
     </div>

@@ -7,7 +7,11 @@
           discard filters
       </p>
     </span>
+    <div class="container_inner" #forms>
+        <app-step *ngFor="let step of steps; let i = index" [stepNumber]="i"></app-step>
+    </div>
     <div class="buttons">
-        <app-step></app-step>
+        <button type="button" (click)="apply(forms)">Apply filters</button>
+        <button type="button" class="middle" (click)="addStep()">Add step</button>
     </div>
 </div>
